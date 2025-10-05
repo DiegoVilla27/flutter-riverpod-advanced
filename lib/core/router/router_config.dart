@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod_advanced/core/router/router_names.dart';
 import 'package:flutter_riverpod_advanced/features/basic/presentation/pages/basic_screen.dart';
+import 'package:flutter_riverpod_advanced/features/basic_annotation/presentation/pages/basic_annotation_screen.dart';
 import 'package:flutter_riverpod_advanced/features/home/presentation/pages/home_screen.dart';
 import 'package:flutter_riverpod_advanced/features/requests/presentation/pages/requests_screen.dart';
 import 'package:flutter_riverpod_advanced/features/shared/presentation/pages/shared_screen.dart';
@@ -15,6 +16,7 @@ import 'package:go_router/go_router.dart';
 /// - `/basic` (BasicScreen): A screen for basic features.
 /// - `/requests` (RequestsScreen): A screen for handling requests.
 /// - `/shared` (SharedScreen): A screen for shared features.
+/// - `/basic_annotation` (BasicAnnotationScreen): A screen for basic annotation features.
 /// 
 /// Usage:
 /// Access the router via `AppRouterConfig.router` to integrate with your app's navigation.
@@ -41,6 +43,11 @@ class AppRouterConfig {
         name: AppRouterNames.shared,
         path: '/shared',
         builder: (_, _) => const SharedScreen(),
+      ),
+      GoRoute(
+        name: AppRouterNames.basicAnnotation,
+        path: '/basic_annotation',
+        builder: (_, _) => const BasicAnnotationScreen(),
       ),
     ],
   );
