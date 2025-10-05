@@ -36,7 +36,7 @@ const List<MenuItem> menu = [
     icon: Icons.center_focus_weak,
   ),
   MenuItem(
-    title: "Basic",
+    title: "Shared",
     subtitle: "How to use Shared Provider",
     path: AppRouterNames.shared,
     icon: Icons.center_focus_weak,

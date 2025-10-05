@@ -36,7 +36,7 @@ class ActionsWidget extends ConsumerWidget {
 /// 
 /// - Displays an icon in the center.
 /// - Executes the provided action when pressed.
-/// - Uses a black background and white foreground for styling.
+/// - Uses a white background and black foreground for styling.
 /// 
 /// Usage:
 /// Use [ButtonWidget] to create icon-based action buttons in your UI.
@@ -52,8 +52,8 @@ class ButtonWidget extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         shape: const CircleBorder(),
         padding: const EdgeInsets.all(20.0),
-        backgroundColor: Colors.black,
-        foregroundColor: Colors.white,
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.black,
       ),
       onPressed: action,
       child: Icon(icon),

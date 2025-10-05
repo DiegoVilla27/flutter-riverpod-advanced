@@ -1,12 +1,46 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod_advanced/features/requests/presentation/pages/providers/users/users_provider.dart';
 
-class RequestsScreen extends StatelessWidget {
+/// [RequestsScreen] displays a list of users fetched asynchronously using Riverpod.
+/// 
+/// - Uses Riverpod's [ConsumerWidget] to interact with the [usersProvider].
+/// - Shows a loading indicator while fetching data.
+/// - Displays an error message if the fetch fails.
+/// - Renders a list of users with their name and email.
+/// 
+/// Usage:
+/// Place [RequestsScreen] in your navigation to provide a user list interface.
+class RequestsScreen extends ConsumerWidget {
   const RequestsScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(_, WidgetRef ref) {
+    final usersProv = ref.watch(usersProvider);
+
     return Scaffold(
-      body: Center(child: Text('Requests Screen')),
+      appBar: AppBar(
+        title: const Text('Users'),
+      ),
+      body: usersProv.when(
+        data: (users) {
+          if (users.isEmpty) {
+            const Center(child: Text('No users found'));
+          }
+          return ListView.builder(
+            itemCount: users.length,
+            itemBuilder: (_, index) {
+              final user = users[index];
+              return ListTile(
+                title: Text(user.name),
+                subtitle: Text(user.email),
+              );
+            },
+          );
+        },
+        loading: () => const Center(child: CircularProgressIndicator()),
+        error: (err, stack) => Center(child: Text('Error: $err')),
+      ),
     );
   }
 }

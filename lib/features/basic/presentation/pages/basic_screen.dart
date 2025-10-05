@@ -20,6 +20,9 @@ class BasicScreen extends ConsumerWidget {
     final counterProv = ref.watch(counterProvider);
 
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Counter'),
+      ),
       body: Center(
         child: Column(
           spacing: 10.0,
