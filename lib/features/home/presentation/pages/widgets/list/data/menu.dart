@@ -44,5 +44,10 @@ const List<MenuItem> menu = [
     title: "Shared (Notifier)",
     subtitle: "How to use Shared Provider",
     path: AppRouterNames.shared,
+  ),
+  MenuItem(
+    title: "ToDo + Annotation",
+    subtitle: "How to use ToDo Provider Computed",
+    path: AppRouterNames.todo,
   )
 ];

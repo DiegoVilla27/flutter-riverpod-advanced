@@ -5,6 +5,7 @@ import 'package:flutter_riverpod_advanced/features/home/presentation/pages/home_
 import 'package:flutter_riverpod_advanced/features/requests/presentation/pages/requests_screen.dart';
 import 'package:flutter_riverpod_advanced/features/requests_annotation/presentation/pages/requests_annotation_screen.dart';
 import 'package:flutter_riverpod_advanced/features/shared/presentation/pages/shared_screen.dart';
+import 'package:flutter_riverpod_advanced/features/todos/presentation/pages/todos_screen.dart';
 import 'package:go_router/go_router.dart';
 
 /// [AppRouterConfig] is responsible for configuring the application's routing using GoRouter.
@@ -47,6 +48,11 @@ class AppRouterConfig {
         name: AppRouterNames.shared,
         path: '/shared',
         builder: (_, _) => const SharedScreen(),
+      ),
+      GoRoute(
+        name: AppRouterNames.todo,
+        path: '/todo',
+        builder: (_, _) => const TodoScreen(),
       )
     ],
   );
