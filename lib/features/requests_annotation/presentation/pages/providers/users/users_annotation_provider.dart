@@ -1,0 +1,39 @@
+import 'package:flutter_riverpod_advanced/core/di/di.dart';
+import 'package:flutter_riverpod_advanced/features/requests/domain/entities/user_entity.dart';
+import 'package:flutter_riverpod_advanced/features/requests/domain/use_cases/get_users.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+part 'users_annotation_provider.g.dart';
+
+/// [Users] is a Riverpod code-generated provider that manages the asynchronous state of user entities.
+/// 
+/// - Uses [GetUsersUseCase] to fetch user data from the repository.
+/// - The [build] method loads users when the provider is initialized.
+/// - The [loadUsers] method sets the state to loading, fetches users, and updates the state with the result or error.
+/// 
+/// use @Riverpod(keepAlive: true) instead @riverpod to persist data
+/// 
+/// Usage:
+/// Use [usersProvider] to access and manage the asynchronous user state in your widgets.
+@riverpod
+class Users extends _$Users {
+  @override
+  Future<List<UserEntity>> build() async {
+    return await loadUsers();
+  }
+
+  Future<List<UserEntity>> loadUsers() async {
+    final getUsersUseCase = di<GetUsersUseCase>();
+
+    state = const AsyncValue.loading();
+
+    try {
+      final users = await getUsersUseCase.repository.getUsers();
+      state = AsyncValue.data(users);
+      return users;
+    } catch (e, st) {
+      state = AsyncValue.error(e, st);
+      return [];
+    }
+  }
+}

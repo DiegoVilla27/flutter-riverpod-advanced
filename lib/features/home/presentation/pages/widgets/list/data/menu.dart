@@ -26,18 +26,23 @@ const List<MenuItem> menu = [
     path: AppRouterNames.basic,
   ),
   MenuItem(
+    title: "Basic + Annotation",
+    subtitle: "How to use Basic Provider with Annotation",
+    path: AppRouterNames.basicAnnotation,
+  ),
+  MenuItem(
     title: "Requests (AsyncNotifier)",
     subtitle: "How to use Requests Provider",
     path: AppRouterNames.requests,
   ),
   MenuItem(
+    title: "Requests + Annotation",
+    subtitle: "How to use Requests Provider with Annotation",
+    path: AppRouterNames.requestsAnnotation,
+  ),
+  MenuItem(
     title: "Shared (Notifier)",
     subtitle: "How to use Shared Provider",
     path: AppRouterNames.shared,
-  ),
-  MenuItem(
-    title: "Basic + Annotation",
-    subtitle: "How to use Basic Provider with Annotation",
-    path: AppRouterNames.basicAnnotation,
-  ),
+  )
 ];

@@ -3,6 +3,7 @@ import 'package:flutter_riverpod_advanced/features/basic/presentation/pages/basi
 import 'package:flutter_riverpod_advanced/features/basic_annotation/presentation/pages/basic_annotation_screen.dart';
 import 'package:flutter_riverpod_advanced/features/home/presentation/pages/home_screen.dart';
 import 'package:flutter_riverpod_advanced/features/requests/presentation/pages/requests_screen.dart';
+import 'package:flutter_riverpod_advanced/features/requests_annotation/presentation/pages/requests_annotation_screen.dart';
 import 'package:flutter_riverpod_advanced/features/shared/presentation/pages/shared_screen.dart';
 import 'package:go_router/go_router.dart';
 
@@ -10,13 +11,6 @@ import 'package:go_router/go_router.dart';
 /// 
 /// It defines the main navigation structure, specifying the initial route and all available routes.
 /// Each route is associated with a name, a path, and a corresponding screen widget.
-/// 
-/// Routes:
-/// - `/` (HomeScreen): The main entry point of the app.
-/// - `/basic` (BasicScreen): A screen for basic features.
-/// - `/requests` (RequestsScreen): A screen for handling requests.
-/// - `/shared` (SharedScreen): A screen for shared features.
-/// - `/basic_annotation` (BasicAnnotationScreen): A screen for basic annotation features.
 /// 
 /// Usage:
 /// Access the router via `AppRouterConfig.router` to integrate with your app's navigation.
@@ -35,20 +29,25 @@ class AppRouterConfig {
         builder: (_, _) => const BasicScreen(),
       ),
       GoRoute(
+        name: AppRouterNames.basicAnnotation,
+        path: '/basic_annotation',
+        builder: (_, _) => const BasicAnnotationScreen(),
+      ),
+      GoRoute(
         name: AppRouterNames.requests,
         path: '/requests',
         builder: (_, _) => const RequestsScreen(),
       ),
       GoRoute(
+        name: AppRouterNames.requestsAnnotation,
+        path: '/requests_annotation',
+        builder: (_, _) => const RequestsAnnotationScreen(),
+      ),
+      GoRoute(
         name: AppRouterNames.shared,
         path: '/shared',
         builder: (_, _) => const SharedScreen(),
-      ),
-      GoRoute(
-        name: AppRouterNames.basicAnnotation,
-        path: '/basic_annotation',
-        builder: (_, _) => const BasicAnnotationScreen(),
-      ),
+      )
     ],
   );
 }

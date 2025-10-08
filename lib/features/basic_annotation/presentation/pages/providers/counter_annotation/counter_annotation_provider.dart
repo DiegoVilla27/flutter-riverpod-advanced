@@ -7,6 +7,8 @@ part 'counter_annotation_provider.g.dart';
 /// - The initial value is set to 0.
 /// - Provides [increment] and [decrement] methods to modify the counter.
 /// 
+/// use @Riverpod(keepAlive: true) instead @riverpod to persist data
+/// 
 /// Usage:
 /// Use [counterAnnotationProvider] to access and modify the counter state in your widgets.
 @riverpod

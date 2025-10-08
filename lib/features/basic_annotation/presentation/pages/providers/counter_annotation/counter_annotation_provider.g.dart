@@ -13,6 +13,8 @@ part of 'counter_annotation_provider.dart';
 /// - The initial value is set to 0.
 /// - Provides [increment] and [decrement] methods to modify the counter.
 ///
+/// use @Riverpod(keepAlive: true) instead @riverpod to persist data
+///
 /// Usage:
 /// Use [counterAnnotationProvider] to access and modify the counter state in your widgets.
 
@@ -24,6 +26,8 @@ const counterAnnotationProvider = CounterAnnotationProvider._();
 /// - The initial value is set to 0.
 /// - Provides [increment] and [decrement] methods to modify the counter.
 ///
+/// use @Riverpod(keepAlive: true) instead @riverpod to persist data
+///
 /// Usage:
 /// Use [counterAnnotationProvider] to access and modify the counter state in your widgets.
 final class CounterAnnotationProvider
@@ -32,6 +36,8 @@ final class CounterAnnotationProvider
   ///
   /// - The initial value is set to 0.
   /// - Provides [increment] and [decrement] methods to modify the counter.
+  ///
+  /// use @Riverpod(keepAlive: true) instead @riverpod to persist data
   ///
   /// Usage:
   /// Use [counterAnnotationProvider] to access and modify the counter state in your widgets.
@@ -68,6 +74,8 @@ String _$counterAnnotationHash() => r'1b3b724e9a64d1c3c5a7a31bdd7c9009a26f6fac';
 ///
 /// - The initial value is set to 0.
 /// - Provides [increment] and [decrement] methods to modify the counter.
+///
+/// use @Riverpod(keepAlive: true) instead @riverpod to persist data
 ///
 /// Usage:
 /// Use [counterAnnotationProvider] to access and modify the counter state in your widgets.

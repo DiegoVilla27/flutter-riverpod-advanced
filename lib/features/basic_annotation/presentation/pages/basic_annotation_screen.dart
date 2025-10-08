@@ -20,7 +20,7 @@ class BasicAnnotationScreen extends ConsumerWidget {
     final counterProv = ref.watch(counterAnnotationProvider);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Counter')),
+      appBar: AppBar(title: const Text('Counter Annotation')),
       body: Center(
         child: Column(
           spacing: 10.0,
